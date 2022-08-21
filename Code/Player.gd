@@ -1,3 +1,9 @@
+extends KinematicBody
+
+var speed = 10
+var run_speed = 1.5
+var acceleration = 10
+var air_resistance = 1
 var jump_force = 20
 var gravity = 1
 
@@ -44,42 +50,5 @@ func _physics_process(delta):
 		velocity.z = lerp(velocity.z, direction.z*speed, air_resistance*delta)
 		snap = Vector3.DOWN
 		velocity.y -= gravity
-		
-	grab()
-	hud()
 	
 	velocity = move_and_slide_with_snap(velocity, snap, Vector3.UP, true, 4, 0.785398, false)
-	
-func grab():
-	if Input.is_action_just_pressed("mouse_left"):
-		#project position
-		if $Camera/RayCast.is_colliding():
-			if $Camera/RayCast.get_collider().is_in_group("grabbable"):
-				grabbed = $Camera/RayCast.get_collider()
-				grabbed.gravity_scale = 0
-	if Input.is_action_just_released("mouse_left"):
-		if grabbed != null:
-			grabbed.gravity_scale = 10
-		grabbed = null
-	if Input.is_action_just_released("out"):
-		hold_distance += 0.5
-	if Input.is_action_just_released("in"):
-		hold_distance -= 0.5
-	hold_distance = clamp(hold_distance, 3, 25)
-		
-	if grabbed != null:
-		track()
-		
-func track():
-	var track_pos = camera.project_position(Vector2(640, 360), hold_distance)
-	#grabbed.gravity_scale = 0
-	grabbed.add_central_force(grabbed.transform.origin.direction_to(track_pos) * grabbed.transform.origin.distance_to(track_pos) * 75)
-
-func hud():
-	$HUD/P1Height.text = str(round(transform.origin.y))
-	
-#grabbed.add_central_force((track_pos - grabbed.transform.origin)*25)
-#grabbed._integrate_forces()
-#grabbed.transform.origin = grabbed.transform.origin.linear_interpolate(track_pos, 0.25)
-#grabbed.velocity = grabbed.velocity.linear_interpolate(track_pos - grabbed.transform.origin, 5)
-#grabbed.linear_velocity = grabbed.transform.origin.direction_to(track_pos) * grabbed.transform.origin.distance_to(track_pos) * 10
