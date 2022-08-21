@@ -27,6 +27,8 @@ func _input(event):
 		rotation_degrees.y += -event.relative.x * mouse_sense
 		camera.rotation_degrees.x += -event.relative.y * mouse_sense
 		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, -90, 90)
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().quit()
 		
 func _physics_process(delta):
 	var horizontal = Input.get_action_strength("backward") - Input.get_action_strength("forward")
