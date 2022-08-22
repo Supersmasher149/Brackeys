@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Materials/Dev.tres" type="Material" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Textures/Red/texture_05.png" type="Texture" id=3]
 
 [sub_resource type="SpatialMaterial" id=2]
 metallic = 0.55
@@ -11,6 +12,10 @@ emission = Color( 0.709804, 0.709804, 0.0941176, 1 )
 emission_energy = 10.0
 emission_operator = 0
 emission_on_uv2 = false
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
 
 [sub_resource type="Environment" id=1]
 tonemap_mode = 3
@@ -34,45 +39,8 @@ height = 15.0
 depth = 70.0
 material = ExtResource( 1 )
 
-[node name="walls" type="CSGCombiner" parent="Geometry"]
-use_collision = true
-
-[node name="CSGBox" type="CSGBox" parent="Geometry/walls"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -5, 0 )
-width = 1.0
-height = 5.0
-depth = 20.0
-material = ExtResource( 1 )
-
-[node name="CSGBox2" type="CSGBox" parent="Geometry/walls"]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, -5, 0.527 )
-width = 20.0
-height = 5.0
-depth = 1.0
-material = ExtResource( 1 )
-
-[node name="CSGBox3" type="CSGBox" parent="Geometry/walls"]
-transform = Transform( 0.423709, 0, -0.905798, 0, 1, 0, 0.905798, 0, 0.423709, -1.79749, -5, 9.942 )
-width = 20.0
-height = 5.0
-depth = 1.0
-material = ExtResource( 1 )
-
-[node name="CSGBox4" type="CSGBox" parent="Geometry/walls"]
-transform = Transform( 0.423709, 0, -0.905798, 0, 1, 0, 0.905798, 0, 0.423709, 9.24007, -5, 18.4228 )
-width = 20.0
-height = 5.0
-depth = 1.0
-material = ExtResource( 1 )
-
-[node name="CSGBox5" type="CSGBox" parent="Geometry/walls"]
-transform = Transform( 0.996393, 0, 0.0848604, 0, 1, 0, -0.0848604, 0, 0.996393, 5.07996, -5, 22.361 )
-width = 11.9792
-height = 5.0
-depth = 1.0
-material = ExtResource( 1 )
-
 [node name="Lights" type="Spatial" parent="Geometry"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29951, 0 )
 
 [node name="Lamp" type="CSGBox" parent="Geometry/Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12876, 27.9796 )
@@ -289,6 +257,63 @@ material = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.570856, 0 )
 spot_range = 19.6685
 spot_angle = 78.9768
+
+[node name="Lamp19" type="CSGBox" parent="Geometry/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.12876, 26.9796 )
+width = 0.936989
+height = 0.228093
+depth = 6.97455
+material = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Geometry/Lights/Lamp19"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.570856, 0 )
+spot_range = 19.6685
+spot_angle = 78.9768
+
+[node name="Lamp20" type="CSGBox" parent="Geometry/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.12876, 12.9796 )
+width = 0.936989
+height = 0.228093
+depth = 6.97455
+material = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Geometry/Lights/Lamp20"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.570856, 0 )
+spot_range = 19.6685
+spot_angle = 78.9768
+
+[node name="Lamp21" type="CSGBox" parent="Geometry/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.12876, -4.02039 )
+width = 0.936989
+height = 0.228093
+depth = 6.97455
+material = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Geometry/Lights/Lamp21"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.570856, 0 )
+spot_range = 19.6685
+spot_angle = 78.9768
+
+[node name="Lamp22" type="CSGBox" parent="Geometry/Lights"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 0.12876, -18.0204 )
+width = 0.936989
+height = 0.228093
+depth = 6.97455
+material = SubResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="Geometry/Lights/Lamp22"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.570856, 0 )
+spot_range = 19.6685
+spot_angle = 78.9768
+
+[node name="booth" type="CSGCombiner" parent="Geometry"]
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="Geometry/booth"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -6.60256, 27 )
+width = 0.5
+depth = 16.0
+material = SubResource( 3 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.17107, 0 )
