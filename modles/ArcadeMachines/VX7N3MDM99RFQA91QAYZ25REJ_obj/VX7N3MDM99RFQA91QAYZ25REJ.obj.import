@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/VX7N3MDM99RFQA91QAYZ25REJ.obj-b0d91b582ba758732af60eaf62d72bdb.mesh"
+
+[deps]
+
+files=[ "res://.import/VX7N3MDM99RFQA91QAYZ25REJ.obj-b0d91b582ba758732af60eaf62d72bdb.mesh" ]
+
+source_file="res://modles/ArcadeMachines/VX7N3MDM99RFQA91QAYZ25REJ_obj/VX7N3MDM99RFQA91QAYZ25REJ.obj"
+dest_files=[ "res://.import/VX7N3MDM99RFQA91QAYZ25REJ.obj-b0d91b582ba758732af60eaf62d72bdb.mesh", "res://.import/VX7N3MDM99RFQA91QAYZ25REJ.obj-b0d91b582ba758732af60eaf62d72bdb.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

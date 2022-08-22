@@ -24,6 +24,10 @@ config/name="Brackeys"
 run/main_scene="res://Scenes/Testing.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/fullscreen=true
+
 [editor]
 
 version_control_autoload_on_startup=true
