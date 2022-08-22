@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Code/Player.gd" type="Script" id=1]
+[ext_resource path="res://flashlightarm.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://texture.jpg" type="Texture" id=3]
+[ext_resource path="res://Cop_Body_LOD_DIFF.jpg" type="Texture" id=4]
 
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_texture = ExtResource( 4 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 3 )
 
 [node name="Testing" type="Spatial"]
 
@@ -30,3 +39,9 @@ shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Player/Camera"]
+transform = Transform( 2.98858, 0.0535941, 0.17061, 0, 2.9363, -0.409949, -0.261467, 0.612583, 1.95009, 1.031, -0.451, -0.525 )
+mesh = ExtResource( 2 )
+material/0 = SubResource( 3 )
+material/1 = SubResource( 4 )
