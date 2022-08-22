@@ -40,7 +40,6 @@ depth = 70.0
 material = ExtResource( 1 )
 
 [node name="Lights" type="Spatial" parent="Geometry"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.29951, 0 )
 
 [node name="Lamp" type="CSGBox" parent="Geometry/Lights"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12876, 27.9796 )
