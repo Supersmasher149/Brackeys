@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Materials/Dev.tres" type="Material" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Textures/Red/texture_05.png" type="Texture" id=3]
-[ext_resource path="res://modles/Bowling lane_plus.glb" type="PackedScene" id=4]
-[ext_resource path="res://modles/Bowling lane_plus1.glb" type="PackedScene" id=5]
+[ext_resource path="res://modles/Bowling lane_plus4.glb" type="PackedScene" id=6]
 
 [sub_resource type="SpatialMaterial" id=2]
 metallic = 0.55
@@ -324,11 +323,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.17107, 0 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
-[node name="Bowling lane_plus" parent="." instance=ExtResource( 4 )]
-transform = Transform( -3, 0, -2.26494e-07, 0, 3, 0, 4.52987e-07, 0, -1.5, -37, -2.99679, -15 )
-
-[node name="Bowling lane_plus2" parent="." instance=ExtResource( 4 )]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -38.1384, -9.65943, -11.7398 )
-
-[node name="Bowling lane_plus1" parent="Bowling lane_plus2" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3674, 6.51423, -3.92202 )
+[node name="Bowling lane_plus4" parent="." instance=ExtResource( 6 )]
+transform = Transform( -1, -1.13133e-08, 8.9407e-08, -1.13133e-08, 1, -8.59333e-08, -8.9407e-08, -8.59333e-08, -1, -30.042, -2.99679, -10.2614 )
