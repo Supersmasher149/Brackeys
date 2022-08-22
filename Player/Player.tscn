@@ -1,10 +1,19 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/Player.gd" type="Script" id=1]
+[ext_resource path="res://shader/crt_shader.shader" type="Shader" id=2]
 
 [sub_resource type="CapsuleMesh" id=1]
 
 [sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/crt_curve = 0.02
+shader_param/crt_scan_line_color = 0.347
+shader_param/aperture_grille_rate = 0.4
+shader_param/rf_switch_esque_blur = 1.0
+shader_param/white_noise_rate = 0.1
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
@@ -20,3 +29,14 @@ shape = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource( 3 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -539.5
+margin_top = -316.0
+margin_right = 539.5
+margin_bottom = 316.0
